@@ -14,9 +14,13 @@
     <button type="submit">Entrar</button>
     <p>Criar conta como:</p>
     <div class="footer">
-      <a class="pf">Pessoa Fisíca</a>
+      <router-link to="/cadastro-pf"> 
+        <a class="pf">Pessoa Fisíca</a>
+      </router-link>
       <p>ou</p>
-      <a class="pj">Pessoa Jurídica</a>
+      <router-link to="/cadastro-pj">
+        <a class="pj">Pessoa Jurídica</a>
+      </router-link>
     </div>
   </div>
 </template>

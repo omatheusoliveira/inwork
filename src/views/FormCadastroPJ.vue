@@ -8,22 +8,36 @@
       </p>
     </div>
     <div class="content">
-      <div class="personal-information">
-        <h3>Informações pessoais</h3>
-        <div class="email">
-          <p>Email<a style="color: red">*</a></p>
+      <div class="company-information">
+        <h3>Informações da empresa</h3>
+        <div class="razao-social">
+          <p>Razão social<a style="color: red">*</a></p>
           <input type="text" />
         </div>
-        <div class="cpf">
-          <p>CPF<a style="color: red">*</a></p>
+        <div class="logradouro">
+          <p>Logradouro<a style="color: red">*</a></p>
           <input type="text" />
         </div>
-        <div class="full-name">
-          <p>Nome completo<a style="color: red">*</a></p>
+        <div class="municipio">
+          <p>Municípo/UF<a style="color: red">*</a></p>
           <input type="text" />
         </div>
-        <div class="phone">
-          <p>Celular<a style="color: red">*</a></p>
+        <div class="cnpj">
+          <p>CNPJ<a style="color: red">*</a></p>
+          <input type="text" />
+        </div>
+      </div>
+      <div class="another-information">
+        <div class="numero">
+          <p>Número<a style="color: red">*</a></p>
+          <input type="text" />
+        </div>
+        <div class="cep">
+          <p>CEP<a style="color: red">*</a></p>
+          <input type="text" />
+        </div>
+        <div class="bairro">
+          <p>Bairro<a style="color: red">*</a></p>
           <input type="text" />
         </div>
       </div>
@@ -51,7 +65,7 @@
 
 <script>
 export default {
-  name: "FormCadastroPF",
+  name: "FormCadastroPJ",
 };
 </script>
 
@@ -79,14 +93,20 @@ export default {
 
   .content {
     display: flex;
-    width: 1000px;
+    width: 70%;
     justify-content: space-between;
+    max-height: 520px;
     h3 {
       text-align: center;
       font-size: 20px;
     }
+    
+    .another-information {
+      margin-top: 50px;
+    }
 
-    .personal-information {
+    .company-information,
+    .another-information {
       p {
         margin: 25px 0 6px 0;
       }
@@ -94,7 +114,7 @@ export default {
 
     .create-login {
       #username {
-        margin: 0 0 6px 0;
+        margin: 5px 0 6px 0;
       }
 
       #password {
@@ -120,11 +140,11 @@ export default {
       }
     }
 
-    .personal-information {
-      .email,
-      .cpf,
-      .full-name,
-      .phone {
+    .company-information {
+      .razao-social,
+      .logradouro,
+      .municipio,
+      .cnpj {
         input {
           width: 375px;
           height: 50px;
@@ -134,6 +154,21 @@ export default {
         }
       }
     }
+
+    .another-information {
+      .numero,
+      .cep,
+      .bairro {
+        input {
+          width: 375px;
+          height: 50px;
+          border-radius: 10px;
+          border: 0.1px solid #80808055;
+          text-indent: 17px;
+        }
+      }
+    }
+
     .create-login {
       display: flex;
       flex-direction: column;
