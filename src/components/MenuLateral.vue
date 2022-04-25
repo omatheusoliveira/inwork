@@ -1,33 +1,87 @@
 <template>
-  <div class="hello">
-    teste
-    <img src="../assets/Icons/icon-vaga.png" alt="icon-vaga">
-    <img src="../assets/Icons/icon-user.png" alt="icon-user">
+  <div class="menu-lateral">
+    <div class="logo">
+      <img src="../assets/images/Logo.png" alt="logo" />
+    </div>
+    <div class="buttons">
+      <div class="vagas">
+        <img src="../assets/icons/icon-vaga.png" alt="iconvaga" />
+        <label style="text-decoration: underline">Vagas</label>
+      </div>
+      <div class="profile">
+        <img src="../assets/icons/icon-user.png" alt="iconprofile" />
+        <label>Perfil</label>
+      </div>
+    </div>
+    <div class="logout">
+      <img src="../assets/icons/icon-logout.png" alt="iconlogout" />
+      <label>Sair</label>
+    </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "MenuLateral",
-
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.menu-lateral {
+  width: 253px;
+  height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 60px 0;
+
+  label {
+    font-size: 24px;
+    font-weight: 500;
+    color: @text-color-menu-lateral;
+  }
+
+  .buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+
+    .profile{
+      img{
+        margin-left: 3px;
+      }
+      label{
+        margin-right: 18px;
+      }
+    }
+  }
+
+  .logout{
+    label{
+      margin-right: 31px;
+    }
+  }
+
+  .vagas, .profile, .logout{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+  }
+
+  .logo {
+    img {
+      width: 215px;
+      height: 58px;
+    }
+  }
+  .buttons, .logout, label{
+    cursor: pointer;
+  }
 }
 </style>
