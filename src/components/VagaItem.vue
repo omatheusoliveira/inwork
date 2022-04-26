@@ -17,7 +17,7 @@
           <div class="description">
             <p>
               Organização da produção (limpeza, organização de ferramentas).
-              Ajuda com preenchimento de relatórios. Conferencia na produção.
+              Ajuda com preenchimento de relatórios. Conferência na produção.
             </p>
           </div>
         </div>
@@ -48,7 +48,7 @@
           <div class="description">
             <p>
               Organização da produção (limpeza, organização de ferramentas).
-              Ajuda com preenchimento de relatórios. Conferencia na produção.
+              Ajuda com preenchimento de relatórios. Conferência na produção.
             </p>
           </div>
         </div>
