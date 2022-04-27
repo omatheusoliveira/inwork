@@ -7,7 +7,7 @@
         dados
       </p>
     </div>
-    <div class="content">
+    <form>
       <div class="company-information">
         <h3>Informações da empresa</h3>
         <div class="razao-social">
@@ -59,7 +59,7 @@
           </router-link>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </template>
 
@@ -91,7 +91,7 @@ export default {
     }
   }
 
-  .content {
+  form {
     display: flex;
     width: 70%;
     justify-content: space-between;

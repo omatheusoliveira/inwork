@@ -7,7 +7,7 @@
         dados
       </p>
     </div>
-    <div class="content">
+    <form action="">
       <div class="personal-information">
         <h3>Informações pessoais</h3>
         <div class="email">
@@ -45,7 +45,7 @@
           </router-link>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </template>
 
@@ -77,10 +77,12 @@ export default {
     }
   }
 
-  .content {
+  form {
+
     display: flex;
     width: 1000px;
     justify-content: space-between;
+    
     h3 {
       text-align: center;
       font-size: 20px;
