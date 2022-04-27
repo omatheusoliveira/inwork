@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img src="../assets/images/Logo.png" alt="logo" class="logo" />
+    <img src="../../assets/images/Logo.png" alt="logo" class="logo" />
     <h1>Bem-vindo,</h1>
     <h3>Por favor, faça login.</h3>
     <form action="" method="">
@@ -12,7 +12,9 @@
         <p>Senha<a style="color: red">*</a></p>
         <input type="text" placeholder="Digite sua senha" />
       </div>
-      <button type="submit">Entrar</button>
+      <router-link to="/home-pf">
+        <button type="submit">Entrar</button>
+      </router-link>
       <p id="create-account">Criar conta como:</p>
       <div class="footer">
         <router-link to="/cadastro-pf">
@@ -101,7 +103,7 @@ export default {
       display: flex;
       justify-content: space-between;
       color: @text-color;
-
+      
       a {
         cursor: pointer;
         text-decoration-line: underline;

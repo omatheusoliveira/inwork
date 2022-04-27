@@ -1,7 +1,7 @@
 <template>
   <div class="form">
     <div class="head">
-      <img src="../assets/images/Logo.png" alt="logo-inwork" />
+      <img src="../../assets/images/Logo.png" alt="logo-inwork" />
       <p>
         Para darmos início ao seu cadastro, por favor nos informe alguns de seus
         dados

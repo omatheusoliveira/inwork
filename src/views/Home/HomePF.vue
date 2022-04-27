@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import MenuLateral from "../components/MenuLateral.vue";
-import VagaItem from "../components/VagaItem.vue";
+import MenuLateral from "../../components/MenuLateral.vue";
+import VagaItem from "../../components/VagaItem.vue";
 
 export default {
   name: "HomePF",

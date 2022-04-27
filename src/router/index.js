@@ -1,8 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import LoginView from "../views/LoginView.vue";
-import FormCadastroPF from "../views/FormCadastroPF.vue";
-import FormCadastroPJ from "../views/FormCadastroPJ.vue";
-import HomePF from "../views/HomePF.vue"
+import LoginView from "../views/Login/LoginView.vue";
+import FormCadastroPF from "../views/Cadastro/FormCadastroPF.vue";
+import FormCadastroPJ from "../views/Cadastro/FormCadastroPJ.vue";
+import HomePF from "../views/Home/HomePF.vue"
+import EditarVagas from "../views/Vagas/EditarVagas.vue"
 
 const routes = [
   {
@@ -28,6 +29,11 @@ const routes = [
     path: "/home-pf",
     name: "home-pf",
     component: HomePF,
+  },
+  {
+    path: "/editar-vaga",
+    name: "editar-vaga",
+    component: EditarVagas,
   },
 ];
 
