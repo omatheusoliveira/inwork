@@ -42,13 +42,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-  form {
-    p {
-      margin: 0 0 25px 0;
-    }
-
-    h1 {
+  h1 {
       font-size: 64px;
       font-weight: 500;
       margin: 30px 0 0 0;
@@ -59,7 +53,13 @@ export default {
       font-weight: 400;
       margin: 0;
     }
+    p {
+      margin: 0 0 25px 0;
+    }
+  
 
+  form {
+    
     #create-account {
       text-align: center;
     }

@@ -100,7 +100,7 @@ export default {
       text-align: center;
       font-size: 20px;
     }
-    
+
     .another-information {
       margin-top: 50px;
     }

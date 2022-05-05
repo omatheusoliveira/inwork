@@ -31,7 +31,7 @@ export default {
   display: flex;
 
   .container {
-    padding: 94px 150px;
+    padding: 20px 150px 20px 150px;
     width: calc(100vw - 253px);
 
 

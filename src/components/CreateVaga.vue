@@ -25,10 +25,6 @@
       </div>
     </div>
     <div class="footer">
-      <div class="delete-vaga">
-        <img src="../assets/icons/icon-trash.png" alt="icon-trash" />
-        <p>Excluir vaga</p>
-      </div>
       <div class="save-cancel">
         <button>Salvar</button>
         <p>ou</p>
@@ -50,7 +46,7 @@ export default {
 <style lang="less" scoped>
 form {
   width: 100%;
-  height: 700px;
+  height: 100%;
   background: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
@@ -116,7 +112,7 @@ form {
 
     .description {
       textarea {
-        width: 1290px;
+        width: 100%;
         height: 290px;
         border-radius: 10px;
         border: 0.1px solid #80808055;
@@ -130,23 +126,7 @@ form {
   .footer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    .delete-vaga{
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-
-        img{
-            width: 30px;
-            height: 38px;
-        }
-
-        p{
-            margin: 8px 0 0 12px;
-        }
-
-    }
+    justify-content: end;
 
     .save-cancel {
         display: flex;
