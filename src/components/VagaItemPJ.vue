@@ -12,7 +12,7 @@
         </div>
         <div class="body">
           <div class="wage">
-            <p>De R$ 1.001,00</p>
+            <p>Remuneração: R$ 1.001,00</p>
           </div>
           <div class="description">
             <p>
@@ -25,8 +25,9 @@
           <div class="company">
             <p>Empresa: Marilan Alimentos S.A.</p>
           </div>
-          <div class="contact">
-            <h2>Entrar em contato</h2>
+          <div class="edit-vacancy">
+            <img src="../assets/icons/icon-edit.png" alt="icon-edit">
+            <a>Editar vaga</a>
           </div>
         </div>
       </div>
@@ -43,7 +44,7 @@
         </div>
         <div class="body">
           <div class="wage">
-            <p>R$ 1.001,00</p>
+            <p>Remuneração: R$ 1.001,00</p>
           </div>
           <div class="description">
             <p>
@@ -56,8 +57,9 @@
           <div class="company">
             <p>Empresa: Marilan Alimentos S.A.</p>
           </div>
-          <div class="contact">
-            <h2>Entrar em contato</h2>
+          <div class="edit-vacancy">
+            <img src="../assets/icons/icon-edit.png" alt="icon-edit">
+            <a>Editar vaga</a>
           </div>
         </div>
       </div>
@@ -67,7 +69,7 @@
 
 <script>
 export default {
-  name: "VagaItem",
+  name: "VagaItemPJ",
 };
 </script>
 
@@ -81,7 +83,7 @@ export default {
     border-radius: 12px;
   }
   .card:first-child {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
   }
 
   .content {
@@ -132,7 +134,17 @@ export default {
           font-size: 18px;
         }
       }
-      .contact {
+      .edit-vacancy {
+        cursor:pointer;
+        img{
+          width: 25px;
+          height: 25px;
+          margin-right: 12px;
+        }
+        a{
+          font-size: 24px;
+          font-weight: 500;
+        }
         h2 {
           margin: 0;
           text-decoration: underline;
