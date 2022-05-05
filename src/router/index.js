@@ -2,10 +2,11 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import LoginView from "../views/Login/LoginView.vue";
 import FormCadastroPF from "../views/Cadastro/FormCadastroPF.vue";
 import FormCadastroPJ from "../views/Cadastro/FormCadastroPJ.vue";
-import HomePF from "../views/Home/HomePF.vue"
-import EditarVagas from "../views/Vagas/EditarVagas.vue"
-import CriarVaga from "../views/Vagas/CriarVaga.vue"
-import ProfilePJ from "../views/Profile/ProfilePJ.vue"
+import HomePF from "../views/Home/HomePF.vue";
+import EditarVagas from "../views/Vagas/EditarVagas.vue";
+import CriarVaga from "../views/Vagas/CriarVaga.vue";
+import ProfilePJ from "../views/Profile/ProfilePJ.vue";
+import ProfilePF from "../views/Profile/ProfilePF.vue";
 
 const routes = [
   {
@@ -47,6 +48,13 @@ const routes = [
     name: "my-profile-pj",
     component: ProfilePJ,
   },
+  {
+    path: "/my-profile-pf",
+    name: "my-profile-pf",
+    component: ProfilePF,
+  },
+
+
 ];
 
 const router = createRouter({
