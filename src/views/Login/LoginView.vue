@@ -3,35 +3,57 @@
     <img src="../../assets/images/Logo.png" alt="logo" class="logo" />
     <h1>Bem-vindo,</h1>
     <h3>Por favor, faça login.</h3>
-    <form action="" method="">
+    <form @submit.prevent="login">
       <div class="user">
         <p>Usuário<a style="color: red">*</a></p>
-        <input type="text" placeholder="Digite seu usuário" />
+        <input type="text" placeholder="Digite seu usuário" v-model="user" />
       </div>
       <div class="password">
         <p>Senha<a style="color: red">*</a></p>
-        <input type="text" placeholder="Digite sua senha" />
+        <input
+          type="password"
+          placeholder="Digite sua senha"
+          v-model="password"
+        />
       </div>
-      <router-link to="/home-pf">
-        <button type="submit">Entrar</button>
-      </router-link>
-      <p id="create-account">Criar conta como:</p>
-      <div class="footer">
-        <router-link to="/cadastro-pf">
-          <a class="pf">Pessoa Fisíca</a>
-        </router-link>
-        <p>ou</p>
-        <router-link to="/cadastro-pj">
-          <a class="pj">Pessoa Jurídica</a>
-        </router-link>
-      </div>
+      <button type="submit">Entrar</button>
     </form>
+    <p id="create-account">Criar conta como:</p>
+    <div class="footer">
+      <router-link to="/cadastro-pf">
+        <a class="pf">Pessoa Fisíca</a>
+      </router-link>
+      <p>ou</p>
+      <router-link to="/cadastro-pj">
+        <a class="pj">Pessoa Jurídica</a>
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "LoginView",
+  data() {
+    return {
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    async login() {
+      const response = await axios.post(
+        "https://inwork-api.herokuapp.com/api/v1/user/login",
+        {
+          username: this.username,
+          password: this.password,
+        }
+      );
+      console.log(response);
+    },
+  },
 };
 </script>
 
@@ -43,23 +65,21 @@ export default {
   justify-content: center;
   flex-direction: column;
   h1 {
-      font-size: 64px;
-      font-weight: 500;
-      margin: 30px 0 0 0;
-    }
+    font-size: 64px;
+    font-weight: 500;
+    margin: 30px 0 0 0;
+  }
 
-    h3 {
-      font-size: 36px;
-      font-weight: 400;
-      margin: 0;
-    }
-    p {
-      margin: 0 0 25px 0;
-    }
-  
+  h3 {
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0;
+  }
+  p {
+    margin: 0 0 25px 0;
+  }
 
   form {
-    
     #create-account {
       text-align: center;
     }
@@ -97,21 +117,20 @@ export default {
       font-weight: 500;
       font-size: 36px;
     }
+  }
+  .footer {
+    width: 375px;
+    display: flex;
+    justify-content: space-between;
+    color: @text-color;
 
-    .footer {
-      width: 375px;
-      display: flex;
-      justify-content: space-between;
-      color: @text-color;
-      
-      a {
-        cursor: pointer;
-        text-decoration-line: underline;
-      }
+    a {
+      cursor: pointer;
+      text-decoration-line: underline;
+    }
 
-      p {
-        margin: 0;
-      }
+    p {
+      margin: 0;
     }
   }
 }

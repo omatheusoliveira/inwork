@@ -7,38 +7,38 @@
         dados
       </p>
     </div>
-    <form action="">
+    <form @submit.prevent="registerPF">
       <div class="personal-information">
         <h3>Informações pessoais</h3>
         <div class="email">
           <p>Email<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="email" />
         </div>
         <div class="cpf">
           <p>CPF<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="cpf" />
         </div>
         <div class="full-name">
           <p>Nome completo<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="name" />
         </div>
         <div class="phone">
           <p>Celular<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="phone" />
         </div>
       </div>
       <div class="create-login">
         <h3>Crie seu login</h3>
         <div class="username">
           <p id="username">Nome de usuário<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="username" />
         </div>
         <div class="password">
           <p id="password">Senha<a style="color: red">*</a></p>
-          <input type="password" />
+          <input type="password" v-model="password" />
         </div>
         <div class="footer">
-          <button type="submit">Finalizar</button>
+            <button type="submit">Finalizar</button>
           <p class="or">ou</p>
           <router-link to="/login">
             <p>Cancelar</p>
@@ -50,8 +50,43 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "FormCadastroPF",
+
+  data() {
+    return {
+      email: "",
+      cpf: "",
+      name: "",
+      phone: "",
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    async registerPF() {
+      const response = await axios.post("https://inwork-api.herokuapp.com/api/v1/user/register", {
+        email: this.email,
+        cpf: this.cpf,
+        name: this.name,
+        phone: this.phone,
+        username: this.username,
+        password: this.password,
+        cnpj: "",
+        cep: "",
+        street: "",
+        district: "",
+        city: "",
+        state: "", 
+        number: ""
+      });
+      localStorage.setItem("token", response.data.token);
+      console.log(response);
+    },
+  },
+
 };
 </script>
 
@@ -78,11 +113,10 @@ export default {
   }
 
   form {
-
     display: flex;
     width: 1000px;
     justify-content: space-between;
-    
+
     h3 {
       text-align: center;
       font-size: 20px;

@@ -6,11 +6,15 @@
     <div class="buttons">
       <div class="vagas">
         <img src="../assets/icons/icon-vaga.png" alt="iconvaga" />
-        <label style="text-decoration: underline">Vagas</label>
+        <router-link to="/home-pj">
+          <label style="text-decoration: underline">Vagas</label>
+        </router-link>
       </div>
       <div class="profile">
         <img src="../assets/icons/icon-user.png" alt="iconprofile" />
-        <label>Perfil</label>
+        <router-link to="/my-profile-pj">
+          <label>Perfil</label>
+        </router-link>
       </div>
     </div>
     <div class="logout">

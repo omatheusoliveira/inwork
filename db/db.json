@@ -1,0 +1,47 @@
+{
+    "users-pf": [
+        {
+            "id": 1,
+            "email": "thommy@teste.com.br",
+            "cpf": "747.212.678-00",
+            "fullname": "Thommy Shelby",
+            "cellphone": "11 9 9999-9999",
+            "username": "teste@user",
+            "password": "123456"
+        }
+    ],
+    "users-pj": [
+        {
+            "id": 1,
+            "companyname": "Company Shelby",
+            "address": "Rua Elesbão Machado",
+            "city": "Santo Antônio de Jesus - BA",
+            "cnpj": "32.511.513/0001-53",
+            "number": "891",
+            "cep": "44.570-490",
+            "district": "Centro",
+            "username": "teste@company",
+            "password": "123456"
+        }
+    ],
+    "vacancy": [
+        {
+            "id": 1,
+            "title": "Auxiliar de Produção - PCD",
+            "remuneration": "R$ 1.500,00",
+            "contact": "contact@company.com.br",
+            "description": "Organização da produção (limpeza, organização de ferramentas). Ajuda com preenchimento de relatórios. Conferência na produção.",
+            "company": "Company Shelby LTDA",
+            "created_at": "23/04/2022"
+        },
+        {
+            "id": 2,
+            "title": "Auxiliar de Produção - PCD",
+            "remuneration": "R$ 1.500,00",
+            "contact": "contact@company.com.br",
+            "description": "Organização da produção (limpeza, organização de ferramentas). Ajuda com preenchimento de relatórios. Conferência na produção.",
+            "company": "Company Shelby LTDA",
+            "created_at": "23/04/2022"
+        }
+    ]
+}

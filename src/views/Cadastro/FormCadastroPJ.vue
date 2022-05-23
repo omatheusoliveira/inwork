@@ -52,7 +52,9 @@
           <input type="password" />
         </div>
         <div class="footer">
+          <router-link to="home-pj">
           <button type="submit">Finalizar</button>
+          </router-link>
           <p class="or">ou</p>
           <router-link to="/login">
             <p>Cancelar</p>

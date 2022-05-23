@@ -1,6 +1,6 @@
 <template>
   <div class="editar-vaga">
-    <MenuLateral />
+    <MenuLateralPJ />
     <div class="container">
       <div class="header">
         <h2>Editando vaga</h2>
@@ -13,14 +13,14 @@
 </template>
 
 <script>
-import MenuLateral from "../../components/MenuLateral.vue";
+import MenuLateralPJ from "../../components/MenuLateralPJ.vue";
 import CreateVaga from "../../components/CreateVaga.vue";
 
 export default {
   name: "EditarVagas",
   components: {
     CreateVaga,
-    MenuLateral,
+    MenuLateralPJ,
   },
 };
 </script>

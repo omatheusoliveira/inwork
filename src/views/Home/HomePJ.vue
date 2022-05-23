@@ -1,6 +1,6 @@
 <template>
   <div class="homepf">
-    <MenuLateral />
+    <MenuLateralPJ />
     <div class="container">
       <div class="header">
         <h2>Vagas para Marília e região</h2>
@@ -18,13 +18,13 @@
 </template>
 
 <script>
-import MenuLateral from "../../components/MenuLateral.vue";
+import MenuLateralPJ from "../../components/MenuLateralPJ.vue";
 import VagaItemPJ from "../../components/VagaItemPJ.vue";
 
 export default {
   name: "HomePJ",
   components: {
-    MenuLateral,
+    MenuLateralPJ,
     VagaItemPJ,
   },
 };

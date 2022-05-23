@@ -1,6 +1,6 @@
 <template>
   <div class="profile-pf">
-    <MenuLateral />
+    <MenuLateralPF />
     <div class="container">
       <div class="header">
         <img
@@ -9,28 +9,28 @@
         />
         <div class="company-name">
           <h1>Olá,</h1>
-          <h1 style="text-decoration: underline">Rock Balboa</h1>
+          <h1 style="text-decoration: underline">{{ users.fullname }}.</h1>
         </div>
       </div>
       <form>
         <div class="company-information">
           <div class="full-name">
             <p>Nome completo</p>
-            <input type="text" />
+            <input type="text" v-model="users.fullname" />
           </div>
           <div class="cpf">
             <p>CPF</p>
-            <input type="text" />
+            <input type="text" v-model="users.cpf"/>
           </div>
           <div class="email">
             <p>E-mail</p>
-            <input type="text" />
+            <input type="text" v-model="users.email"/>
           </div>
         </div>
         <div class="another-information">
           <div class="phone">
             <p>Celular</p>
-            <input type="text" />
+            <input type="text" v-model="users.cellphone"/>
           </div>
           <div class="footer">
             <button type="submit">Salvar</button>
@@ -46,12 +46,29 @@
 </template>
 
 <script>
-import MenuLateral from "../../components/MenuLateral.vue";
+import MenuLateralPF from "../../components/MenuLateralPF.vue";
+import axios from "axios";
 
 export default {
   name: "ProfilePF",
   components: {
-    MenuLateral,
+    MenuLateralPF,
+  },
+
+  data() {
+    return {
+      users: [],
+    };
+  },
+
+  mounted() {
+    axios.get("http://localhost:3000/users-pf")
+      .then((response) => {
+        this.users = response.data[0];
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };
 </script>
@@ -94,7 +111,7 @@ export default {
       justify-content: space-evenly;
       max-height: 520px;
 
-      p{
+      p {
         margin: 0 0 6px 0;
       }
 
@@ -106,12 +123,13 @@ export default {
           border-radius: 10px;
           border: 0.1px solid #80808055;
           text-indent: 17px;
+          font-size: 22px;
         }
       }
 
-      .company-information{
+      .company-information {
         .cpf,
-        .email{
+        .email {
           margin-top: 21px;
         }
       }

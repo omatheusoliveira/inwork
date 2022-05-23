@@ -9,8 +9,6 @@
         <p>Remuneração</p>
         <div class="inputs">
           <input type="number" />
-          <p>até</p>
-          <input type="number" />
         </div>
       </div>
     </div>
@@ -60,6 +58,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-right: 500px;
 
     .title {
       p {

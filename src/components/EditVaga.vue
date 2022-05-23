@@ -3,25 +3,23 @@
     <div class="header">
       <div class="title">
         <p>Título</p>
-        <input type="text" /> 
+        <input type="text" v-model="vacancy.title" />
       </div>
       <div class="wage">
         <p>Remuneração</p>
         <div class="inputs">
-          <input type="number" />
-          <p>até</p>
-          <input type="number" />
+          <input type="text" v-model="vacancy.remuneration" />
         </div>
       </div>
     </div>
     <div class="body">
       <div class="email">
         <p>E-mail para contato</p>
-        <input type="text" />
+        <input type="text" v-model="vacancy.contact" />
       </div>
       <div class="description">
         <p>Descrição da vaga</p>
-        <textarea></textarea>
+        <textarea v-model="vacancy.description"></textarea>
       </div>
     </div>
     <div class="footer">
@@ -32,8 +30,7 @@
       <div class="save-cancel">
         <button>Salvar</button>
         <p>ou</p>
-        <!-- AQUI TEM Q COLOCAR O ROUTER PARA HOME-PJ -->
-        <router-link to="/home-pf">
+        <router-link to="/home-pj">
           <p>Cancelar</p>
         </router-link>
       </div>
@@ -42,8 +39,27 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "EditVaga",
+
+  data() {
+    return {
+      vacancy: [],
+    };
+  },
+  mounted() {
+    axios
+      .get("http://localhost:3000/vacancy")
+      .then((response) => {
+        this.vacancy = response.data[0];
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
 };
 </script>
 
@@ -64,6 +80,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-right: 500px;
 
     .title {
       p {
@@ -75,6 +92,9 @@ form {
         border-radius: 10px;
         border: 0.1px solid #80808055;
         text-indent: 17px;
+      }
+      input[type="text"] {
+        font-size: 24px;
       }
     }
 
@@ -96,6 +116,9 @@ form {
           border: 0.1px solid #80808055;
           text-indent: 17px;
         }
+        input[type="text"] {
+          font-size: 24px;
+        }
       }
     }
   }
@@ -112,6 +135,9 @@ form {
         border: 0.1px solid #80808055;
         text-indent: 17px;
       }
+      input[type="text"] {
+        font-size: 24px;
+      }
     }
 
     .description {
@@ -120,9 +146,10 @@ form {
         height: 290px;
         border-radius: 10px;
         border: 0.1px solid #80808055;
-        text-indent: 17px;
         resize: none;
         font-size: 22px;
+        padding: 5px 0 0 17px;
+
       }
     }
   }
@@ -132,27 +159,26 @@ form {
     align-items: center;
     justify-content: space-between;
 
-    .delete-vaga{
-        display: flex;
-        align-items: center;
-        cursor: pointer;
+    .delete-vaga {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
 
-        img{
-            width: 30px;
-            height: 38px;
-        }
+      img {
+        width: 30px;
+        height: 38px;
+      }
 
-        p{
-            margin: 8px 0 0 12px;
-        }
-
+      p {
+        margin: 8px 0 0 12px;
+      }
     }
 
     .save-cancel {
-        display: flex;
-        align-items: center;
-        width: 514px;
-        justify-content: space-around;
+      display: flex;
+      align-items: center;
+      width: 514px;
+      justify-content: space-around;
       button {
         height: 50px;
         width: 250px;

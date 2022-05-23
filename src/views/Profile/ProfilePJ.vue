@@ -1,6 +1,6 @@
 <template>
   <div class="profile-pj">
-    <MenuLateral />
+    <MenuLateralPJ />
     <div class="container">
       <div class="header">
         <img
@@ -9,40 +9,40 @@
         />
         <div class="company-name">
           <h1>Olá,</h1>
-          <h1 style="text-decoration: underline">Marilan Alimentos S.A</h1>
+          <h1 style="text-decoration: underline">{{ users.companyname }}.</h1>
         </div>
       </div>
       <form>
         <div class="company-information">
           <div class="razao-social">
             <p>Razão social</p>
-            <input type="text" />
+            <input type="text" v-model="users.companyname"/>
           </div>
           <div class="logradouro">
             <p>Logradouro</p>
-            <input type="text" />
+            <input type="text" v-model="users.address"/>
           </div>
           <div class="municipio">
             <p>Municípo/UF</p>
-            <input type="text" />
+            <input type="text" v-model="users.city"/>
           </div>
           <div class="cnpj">
             <p>CNPJ</p>
-            <input type="text" />
+            <input type="text" v-model="users.cnpj"/>
           </div>
         </div>
         <div class="another-information">
           <div class="numero">
             <p>Número</p>
-            <input type="text" />
+            <input type="text" v-model="users.number"/>
           </div>
           <div class="cep">
             <p>CEP</p>
-            <input type="text" />
+            <input type="text" v-model="users.cep"/>
           </div>
           <div class="bairro">
             <p>Bairro</p>
-            <input type="text" />
+            <input type="text" v-model="users.district"/>
           </div>
           <div class="footer">
             <button type="submit">Salvar</button>
@@ -58,12 +58,30 @@
 </template>
 
 <script>
-import MenuLateral from "../../components/MenuLateral.vue";
+import MenuLateralPJ from "../../components/MenuLateralPJ.vue";
+import axios from 'axios';
 
 export default {
   name: "ProfilePJ",
   components: {
-    MenuLateral,
+    MenuLateralPJ,
+  },
+
+  data() {
+    return {
+      users: [],
+    };
+  },
+
+  mounted() {
+    axios.get("http://localhost:3000/users-pj")
+      .then((response) => {
+        this.users = response.data[0];
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };
 </script>
@@ -118,6 +136,7 @@ export default {
           border-radius: 10px;
           border: 0.1px solid #80808055;
           text-indent: 17px;
+          font-size: 22px;
         }
       }
 
