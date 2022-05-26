@@ -42,6 +42,24 @@
             "description": "Organização da produção (limpeza, organização de ferramentas). Ajuda com preenchimento de relatórios. Conferência na produção.",
             "company": "Company Shelby LTDA",
             "created_at": "23/04/2022"
+        },
+        {
+            "id": 3,
+            "title": "Auxiliar de Produção - PCD",
+            "remuneration": "R$ 1.500,00",
+            "contact": "contact@company.com.br",
+            "description": "Organização da produção (limpeza, organização de ferramentas). Ajuda com preenchimento de relatórios. Conferência na produção.",
+            "company": "Company Shelby LTDA",
+            "created_at": "23/04/2022"
+        },
+        {
+            "id": 4,
+            "title": "Auxiliar de Produção - PCD",
+            "remuneration": "R$ 1.500,00",
+            "contact": "contact@company.com.br",
+            "description": "Organização da produção (limpeza, organização de ferramentas). Ajuda com preenchimento de relatórios. Conferência na produção.",
+            "company": "Company Shelby LTDA",
+            "created_at": "23/04/2022"
         }
     ]
 }

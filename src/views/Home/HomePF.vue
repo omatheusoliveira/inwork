@@ -1,13 +1,15 @@
 <template>
   <div class="homepf">
-    <MenuLateralPF />
+    <div class="menu-lateral">
+      <MenuLateralPF />
+    </div>
     <div class="container">
       <div class="header">
         <h2>Vagas para Marília e região</h2>
         <input type="text" placeholder="Pesquisar por vagas" />
       </div>
       <div class="content">
-          <VagaItem />
+        <VagaItem />
       </div>
     </div>
   </div>
@@ -29,12 +31,14 @@ export default {
 <style lang="less" scoped>
 .homepf {
   display: flex;
+  
+  .menu-lateral {
+    position: fixed;
+  }
 
   .container {
-    padding: 20px 150px 20px 150px;
-    width: calc(100vw - 253px);
-
-
+    padding: 40px 150px 20px 400px;
+    width: 100vw;
     .header {
       display: flex;
       width: 100%;

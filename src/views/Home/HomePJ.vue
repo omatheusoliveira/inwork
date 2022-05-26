@@ -1,6 +1,8 @@
 <template>
-  <div class="homepf">
-    <MenuLateralPJ />
+  <div class="homepj">
+    <div class="menu-lateral">
+      <MenuLateralPJ />
+    </div>
     <div class="container">
       <div class="header">
         <h2>Vagas para Marília e região</h2>
@@ -31,25 +33,16 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.homepf {
+.homepj {
   display: flex;
 
-  .container {
-    padding: 20px 150px 20px 150px;
-    width: calc(100vw - 253px);
+  .menu-lateral {
+    position: fixed;
+  }
 
-    .new-job{
-        display: flex;
-        align-items: center;
-        margin-bottom: 12px;
-        cursor: pointer;
-        width: fit-content;
-        a{
-            font-size: 24px;
-            font-weight: 500;
-            margin-left: 18px;
-        }
-    }
+  .container {
+    padding: 20px 150px 20px 400px;
+    width: 100vw;
 
     .header {
       display: flex;
@@ -74,6 +67,19 @@ export default {
         font-weight: 400;
         font-size: 16px;
       }
+    }
+
+    .new-job{
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        cursor: pointer;
+        width: fit-content;
+        a{
+            font-size: 24px;
+            font-weight: 500;
+            margin-left: 18px;
+        }
     }
   }
 }

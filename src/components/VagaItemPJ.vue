@@ -1,64 +1,33 @@
 <template>
   <div class="vaga-item-content">
-    <div class="card">
+    <div class="card" v-for="vacancies in vacancy" :key="vacancies.id">
       <div class="content">
         <div class="header">
           <div class="title">
-            <h1>Auxiliar de produção - PCD</h1>
+            <h1>{{ vacancies.title }}</h1>
           </div>
           <div class="created">
-            <p>23/04</p>
+            <p>{{ vacancies.created_at }}</p>
           </div>
         </div>
         <div class="body">
           <div class="wage">
-            <p>Remuneração: R$ 1.001,00</p>
+            <p>{{ vacancies.remuneration }}</p>
           </div>
           <div class="description">
             <p>
-              Organização da produção (limpeza, organização de ferramentas).
-              Ajuda com preenchimento de relatórios. Conferência na produção.
+              {{ vacancies.description }}
             </p>
           </div>
         </div>
         <div class="footer">
           <div class="company">
-            <p>Empresa: Marilan Alimentos S.A.</p>
-          </div>
-          <div class="edit-vacancy">
-            <img src="../assets/icons/icon-edit.png" alt="icon-edit">
-            <a>Editar vaga</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="content">
-        <div class="header">
-          <div class="title">
-            <h1>Auxiliar de produção - PCD</h1>
-          </div>
-          <div class="created">
-            <p>23/04</p>
-          </div>
-        </div>
-        <div class="body">
-          <div class="wage">
-            <p>Remuneração: R$ 1.001,00</p>
-          </div>
-          <div class="description">
             <p>
-              Organização da produção (limpeza, organização de ferramentas).
-              Ajuda com preenchimento de relatórios. Conferência na produção.
+              Empresa: <strong> {{ vacancies.company }} </strong>
             </p>
           </div>
-        </div>
-        <div class="footer">
-          <div class="company">
-            <p>Empresa: Marilan Alimentos S.A.</p>
-          </div>
           <div class="edit-vacancy">
-            <img src="../assets/icons/icon-edit.png" alt="icon-edit">
+            <img src="../assets/icons/icon-edit.png" alt="icon-edit" />
             <a>Editar vaga</a>
           </div>
         </div>
@@ -68,9 +37,26 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: "VagaItemPJ",
-};
+
+  data() {
+    return {
+      vacancy: [],
+    };
+  },
+  mounted() {
+    axios.get('http://localhost:3000/vacancy')
+      .then(response => {
+        this.vacancy = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  },
+}
 </script>
 
 <style lang="less" scoped>
@@ -81,11 +67,8 @@ export default {
     background: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
+    margin-bottom: 60px;
   }
-  .card:first-child {
-    margin-bottom: 30px;
-  }
-
   .content {
     padding: 20px 24px 40px 24px;
 
@@ -135,13 +118,13 @@ export default {
         }
       }
       .edit-vacancy {
-        cursor:pointer;
-        img{
+        cursor: pointer;
+        img {
           width: 25px;
           height: 25px;
           margin-right: 12px;
         }
-        a{
+        a {
           font-size: 24px;
           font-weight: 500;
         }
