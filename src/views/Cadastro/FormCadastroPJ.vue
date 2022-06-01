@@ -7,54 +7,52 @@
         dados
       </p>
     </div>
-    <form>
+    <form @submit.prevent="registerPJ">
       <div class="company-information">
         <h3>Informações da empresa</h3>
         <div class="razao-social">
           <p>Razão social<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="companyname"/>
         </div>
         <div class="logradouro">
           <p>Logradouro<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="address"/>
         </div>
         <div class="municipio">
           <p>Municípo/UF<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="city"/>
         </div>
         <div class="cnpj">
           <p>CNPJ<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="cnpj"/>
         </div>
       </div>
       <div class="another-information">
         <div class="numero">
           <p>Número<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="number"/>
         </div>
         <div class="cep">
           <p>CEP<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="cep"/>
         </div>
         <div class="bairro">
           <p>Bairro<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="district"/>
         </div>
       </div>
       <div class="create-login">
         <h3>Crie seu login</h3>
         <div class="username">
           <p id="username">Nome de usuário<a style="color: red">*</a></p>
-          <input type="text" />
+          <input type="text" v-model="username"/>
         </div>
         <div class="password">
           <p id="password">Senha<a style="color: red">*</a></p>
-          <input type="password" />
+          <input type="password" v-model="password"/>
         </div>
         <div class="footer">
-          <router-link to="home-pj">
           <button type="submit">Finalizar</button>
-          </router-link>
           <p class="or">ou</p>
           <router-link to="/login">
             <p>Cancelar</p>
@@ -66,9 +64,47 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: "FormCadastroPJ",
+  data(){
+    return {
+      companyname: "",
+      address: "",
+      city: "",
+      cnpj: "",
+      number: "",
+      cep: "",
+      district: "",
+      username: "",
+      password: "",
+    }
+  },
+  methods: {
+    async registerPJ(){
+      await axios.post('http://localhost:3000/users-pj', {
+        companyname: this.companyname,
+        address: this.address,
+        city: this.city,
+        cnpj: this.cnpj,
+        number: this.number,
+        cep: this.cep,
+        district: this.district,
+        username: this.username,
+        password: this.password,
+      })
+      .then(response => {
+        console.log(response);
+        this.$router.push('/home-pj');
+      })
+      .catch(error => {
+        console.log(error);
+      })
+    }
+  }
 };
+
 </script>
 
 <style lang="less" scoped>

@@ -20,7 +20,7 @@
         </div>
         <div class="full-name">
           <p>Nome completo<a style="color: red">*</a></p>
-          <input type="text" v-model="name" />
+          <input type="text" v-model="fullname" />
         </div>
         <div class="phone">
           <p>Celular<a style="color: red">*</a></p>
@@ -38,7 +38,7 @@
           <input type="password" v-model="password" />
         </div>
         <div class="footer">
-            <button type="submit">Finalizar</button>
+          <button type="submit">Finalizar</button>
           <p class="or">ou</p>
           <router-link to="/login">
             <p>Cancelar</p>
@@ -59,34 +59,32 @@ export default {
     return {
       email: "",
       cpf: "",
-      name: "",
-      phone: "",
+      fullname: "",
+      cellphone: "",
       username: "",
       password: "",
     };
   },
   methods: {
     async registerPF() {
-      const response = await axios.post("https://inwork-api.herokuapp.com/api/v1/user/register", {
-        email: this.email,
-        cpf: this.cpf,
-        name: this.name,
-        phone: this.phone,
-        username: this.username,
-        password: this.password,
-        cnpj: "",
-        cep: "",
-        street: "",
-        district: "",
-        city: "",
-        state: "", 
-        number: ""
-      });
-      localStorage.setItem("token", response.data.token);
-      console.log(response);
+      await axios
+        .post("http://localhost:3000/users-pf", {
+          email: this.email,
+          cpf: this.cpf,
+          fullname: this.fullname,
+          cellphone: this.cellphone,
+          username: this.username,
+          password: this.password,
+        })
+        .then((response) => {
+          console.log(response);
+          this.$router.push("/home-pf");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
-
 };
 </script>
 

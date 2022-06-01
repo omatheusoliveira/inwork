@@ -59,7 +59,7 @@ export default {
       .catch((error) => {
         console.log(error);
       });
-  },
+  }
 };
 </script>
 
@@ -149,7 +149,6 @@ form {
         resize: none;
         font-size: 22px;
         padding: 5px 0 0 17px;
-
       }
     }
   }

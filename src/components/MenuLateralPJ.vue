@@ -13,13 +13,15 @@
       <div class="profile">
         <img src="../assets/icons/icon-user.png" alt="iconprofile" />
         <router-link to="/my-profile-pj">
-          <label>Perfil</label>
+          <label style="text-decoration: underline">Perfil</label>
         </router-link>
       </div>
     </div>
     <div class="logout">
       <img src="../assets/icons/icon-logout.png" alt="iconlogout" />
-      <label>Sair</label>
+      <router-link to="/">
+        <label style="text-decoration: underline">Sair</label>
+      </router-link>
     </div>
   </div>
 </template>
@@ -48,30 +50,32 @@ export default {
     color: @text-color-menu-lateral;
   }
 
-  .buttons{
+  .buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 150px;
 
-    .profile{
-      img{
+    .profile {
+      img {
         margin-left: 3px;
       }
-      label{
+      label {
         margin-right: 18px;
       }
     }
   }
 
-  .logout{
-    label{
+  .logout {
+    label {
       margin-right: 31px;
     }
   }
 
-  .vagas, .profile, .logout{
+  .vagas,
+  .profile,
+  .logout {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -84,7 +88,9 @@ export default {
       height: 58px;
     }
   }
-  .buttons, .logout, label{
+  .buttons,
+  .logout,
+  label {
     cursor: pointer;
   }
 }

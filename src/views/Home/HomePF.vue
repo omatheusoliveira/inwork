@@ -9,7 +9,7 @@
         <input type="text" placeholder="Pesquisar por vagas" />
       </div>
       <div class="content">
-        <VagaItem />
+        <VagaItemPF />
       </div>
     </div>
   </div>
@@ -17,13 +17,13 @@
 
 <script>
 import MenuLateralPF from "../../components/MenuLateralPF.vue";
-import VagaItem from "../../components/VagaItem.vue";
+import VagaItemPF from "../../components/VagaItemPF.vue";
 
 export default {
   name: "HomePF",
   components: {
     MenuLateralPF,
-    VagaItem,
+    VagaItemPF,
   },
 };
 </script>

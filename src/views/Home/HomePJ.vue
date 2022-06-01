@@ -10,7 +10,9 @@
       </div>
       <div class="new-job">
         <img src="../../assets/icons/icon-add.png" alt="icon-add" />
-        <a>Nova vaga</a>
+        <router-link to="/criar-vaga" style="text-decoration: none">
+          <a>Nova vaga</a>
+        </router-link>
       </div>
       <div class="content">
         <VagaItemPJ />
@@ -69,17 +71,17 @@ export default {
       }
     }
 
-    .new-job{
-        display: flex;
-        align-items: center;
-        margin-bottom: 12px;
-        cursor: pointer;
-        width: fit-content;
-        a{
-            font-size: 24px;
-            font-weight: 500;
-            margin-left: 18px;
-        }
+    .new-job {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      cursor: pointer;
+      width: fit-content;
+      a {
+        font-size: 24px;
+        font-weight: 500;
+        margin-left: 8px;
+      }
     }
   }
 }

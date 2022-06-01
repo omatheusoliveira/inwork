@@ -1,42 +1,46 @@
 <template>
-  <div class="vaga-item-content">
-    <div class="card" v-for="vacancies in vacancy" :key="vacancies.id">
-      <div class="content">
-        <div class="header">
-          <div class="title">
-            <h1>{{ vacancies.title }}</h1>
+    <div class="vaga-item-content">
+      <div class="card" v-for="vacancies in vacancy" :key="vacancies.id">
+        <div class="content">
+          <div class="header">
+            <div class="title">
+              <h1>{{ vacancies.title }}</h1>
+            </div>
+            <div class="created">
+              <p>{{ vacancies.created_at }}</p>
+            </div>
           </div>
-          <div class="created">
-            <p>{{ vacancies.created_at }}</p>
+          <div class="body">
+            <div class="wage">
+              <p>{{ vacancies.remuneration }}</p>
+            </div>
+            <div class="description">
+              <p>
+                {{ vacancies.description }}
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="body">
-          <div class="wage">
-            <p>{{ vacancies.remuneration }}</p>
-          </div>
-          <div class="description">
-            <p>
-              {{ vacancies.description }}
-            </p>
-          </div>
-        </div>
-        <div class="footer">
-          <div class="company">
-            <p>Empresa: <strong> {{ vacancies.company }} </strong></p>
-          </div>
-          <div class="contact">
-            <h2>Entrar em contato</h2>
+          <div class="footer">
+            <div class="company">
+              <p>
+                Empresa: <strong> {{ vacancies.company }} </strong>
+              </p>
+            </div>
+            <div class="contact">
+              <h2 @click="openAlert">
+                Entrar em contato
+              </h2>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
-export default {
+export default{
   name: "VagaItem",
 
   data() {
@@ -45,15 +49,21 @@ export default {
     };
   },
   mounted() {
-    axios.get('http://localhost:3000/vacancy')
-      .then(response => {
+    axios
+      .get("http://localhost:3000/vacancy")
+      .then((response) => {
         this.vacancy = response.data;
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   },
-}
+  methods: {
+    openAlert() {
+      alert("Essa empresa ainda não possui contato");
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>

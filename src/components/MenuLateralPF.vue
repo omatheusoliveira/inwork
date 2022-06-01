@@ -13,13 +13,13 @@
       <div class="profile">
         <img src="../assets/icons/icon-user.png" alt="iconprofile" />
         <router-link to="/my-profile-pf">
-          <label>Perfil</label>
+          <label style="text-decoration: underline">Perfil</label>
         </router-link>
       </div>
     </div>
     <div class="logout">
       <img src="../assets/icons/icon-logout.png" alt="iconlogout" />
-      <label>Sair</label>
+      <label style="text-decoration: underline">Sair</label>
     </div>
   </div>
 </template>

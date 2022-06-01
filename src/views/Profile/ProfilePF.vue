@@ -12,7 +12,7 @@
           <h1 style="text-decoration: underline">{{ users.fullname }}.</h1>
         </div>
       </div>
-      <form>
+      <form @submit.prevent="updateUser">
         <div class="company-information">
           <div class="full-name">
             <p>Nome completo</p>
@@ -69,6 +69,24 @@ export default {
       .catch((error) => {
         console.log(error);
       });
+  },
+
+  methods: {
+    async updateUser() {
+      await axios
+        .put(`http://localhost:3000/users-pf/${this.users.id}`,{
+          fullname: this.users.fullname,
+          cpf: this.users.cpf,
+          email: this.users.email,
+          cellphone: this.users.cellphone,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
 };
 </script>

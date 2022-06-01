@@ -1,33 +1,32 @@
 <template>
-  <form>
+  <form @submit.prevent="createVacancy">
     <div class="header">
       <div class="title">
         <p>Título</p>
-        <input type="text" /> 
+        <input type="text" v-model="title" />
       </div>
       <div class="wage">
         <p>Remuneração</p>
         <div class="inputs">
-          <input type="number" />
+          <input type="number" v-model="remuneration" />
         </div>
       </div>
     </div>
     <div class="body">
       <div class="email">
         <p>E-mail para contato</p>
-        <input type="text" />
+        <input type="text" v-model="contact" />
       </div>
       <div class="description">
         <p>Descrição da vaga</p>
-        <textarea></textarea>
+        <textarea v-model="description" maxlength="150"></textarea>
       </div>
     </div>
     <div class="footer">
       <div class="save-cancel">
         <button>Salvar</button>
         <p>ou</p>
-        <!-- AQUI TEM Q COLOCAR O ROUTER PARA HOME-PJ -->
-        <router-link to="/home-pf">
+        <router-link to="/home-pj">
           <p>Cancelar</p>
         </router-link>
       </div>
@@ -36,8 +35,58 @@
 </template>
 
 <script>
+import axios from "axios";
+import moment from "moment";
+
 export default {
-  name: "EditVaga",
+  name: "CreateVaga",
+
+  data() {
+    return {
+      title: "",
+      remuneration: "",
+      contact: "",
+      description: "",
+      company:null ,
+    };
+  },
+
+  async mounted(){
+    await this.getEmpresa()
+  },
+
+  methods: {
+    async getEmpresa() {
+      await axios
+        .get("http://localhost:3000/users-pj")
+        .then((response) => {
+          this.company = response.data[0];
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    async createVacancy() {
+      await axios
+        .post("http://localhost:3000/vacancy", {
+          title: this.title,
+          remuneration: this.remuneration,
+          contact: this.contact,
+          description: this.description,
+          created_at: moment(new Date()).format("DD/MM/YYYY"),
+          company: this.company.companyname,
+        })
+        .then((response) => {
+          console.log(response);
+          this.$router.push("/home-pj");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
 };
 </script>
 
@@ -111,13 +160,13 @@ form {
 
     .description {
       textarea {
-        width: 100%;
+        width: 1290px;
         height: 290px;
         border-radius: 10px;
         border: 0.1px solid #80808055;
-        text-indent: 17px;
         resize: none;
         font-size: 22px;
+        padding: 5px 0 0 17px;
       }
     }
   }
@@ -128,10 +177,10 @@ form {
     justify-content: end;
 
     .save-cancel {
-        display: flex;
-        align-items: center;
-        width: 514px;
-        justify-content: space-around;
+      display: flex;
+      align-items: center;
+      width: 514px;
+      justify-content: space-around;
       button {
         height: 50px;
         width: 250px;

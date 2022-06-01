@@ -12,7 +12,7 @@
           <h1 style="text-decoration: underline">{{ users.companyname }}.</h1>
         </div>
       </div>
-      <form>
+      <form @submit.prevent="updateUser">
         <div class="company-information">
           <div class="razao-social">
             <p>Razão social</p>
@@ -82,6 +82,27 @@ export default {
       .catch((error) => {
         console.log(error);
       });
+  },
+
+  methods: {
+    async updateUser() {
+      await axios
+        .put(`http://localhost:3000/users-pj/${this.users.id}`,{
+          companyname: this.users.companyname,
+          address: this.users.address,
+          city: this.users.city,
+          cnpj: this.users.cnpj,
+          number: this.users.number,
+          cep: this.users.cep,
+          district: this.users.district,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
 };
 </script>

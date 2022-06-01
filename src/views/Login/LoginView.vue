@@ -6,7 +6,7 @@
     <form @submit.prevent="login">
       <div class="user">
         <p>Usuário<a style="color: red">*</a></p>
-        <input type="text" placeholder="Digite seu usuário" v-model="user" />
+        <input type="text" placeholder="Digite seu usuário" v-model="username" />
       </div>
       <div class="password">
         <p>Senha<a style="color: red">*</a></p>
@@ -32,28 +32,9 @@
 </template>
 
 <script>
-import axios from "axios";
 
 export default {
   name: "LoginView",
-  data() {
-    return {
-      username: "",
-      password: "",
-    };
-  },
-  methods: {
-    async login() {
-      const response = await axios.post(
-        "https://inwork-api.herokuapp.com/api/v1/user/login",
-        {
-          username: this.username,
-          password: this.password,
-        }
-      );
-      console.log(response);
-    },
-  },
 };
 </script>
 
