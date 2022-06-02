@@ -22,7 +22,7 @@ Matheus Assunção - Testes e Documentação
 
 ## Link do protótipo
 
-> [Clique aqui para ser redirecionado para o Figma](https://shre.ink/8rf)
+> [Clique aqui para ser redirecionado para o Figma](https://www.figma.com/proto/q0xqySHO8g7Pl3nsqRc0Nj/InWork?node-id=323%3A4&scaling=scale-down&page-id=0%3A1&starting-point-node-id=323%3A4)
 
 
 ## Inicializando
