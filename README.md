@@ -6,7 +6,7 @@ O foco principal deste projeto é ajudar pessoas com algum tipo de deficiência 
 no mercado de trabalho.
 ```
 
-##Tecnologias usadas: 
+## Tecnologias usadas: 
 ```
 Vue 3 + Less + Vue Router + Axios + JSON Server. 
 ```
