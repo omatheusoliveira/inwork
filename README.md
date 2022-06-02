@@ -2,8 +2,8 @@
 
 ## Descrição:
 ```
-O foco principal deste projeto é ajudar pessoas com algum tipo de deficiência a conseguir o primeiro emprego ou reingressar
-no mercado de trabalho.
+O foco principal deste projeto é ajudar pessoas com algum tipo de deficiência a conseguir o primeiro 
+emprego ou reingressar no mercado de trabalho.
 ```
 
 ## Tecnologias usadas: 
