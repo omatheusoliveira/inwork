@@ -1,17 +1,56 @@
 # InWork
 
->Project with Vue 3 + Less + Vue Router + Axios + JSON Server. 
+## Descrição:
+```
+O foco principal deste projeto é ajudar pessoas com algum tipo de deficiência a conseguir o primeiro 
+emprego ou reingressar no mercado de trabalho.
+```
+
+## Tecnologias usadas: 
+```
+Vue 3 + Less + Vue Router + Axios + JSON Server. 
+```
+
+## Equipe desenvolvedora:
+
+```
+Matheus Araujo Oliveira - PO, Desenvolvedor Web e UX/UI
+Murillo Vidotti - UX/UI e Documentação 
+Matheus Assunção - Testes e Documentação
+
+```
+
+## Link do protótipo:
+
+> [Clique aqui para ser redirecionado para o Figma](https://www.figma.com/proto/q0xqySHO8g7Pl3nsqRc0Nj/InWork?node-id=323%3A4&scaling=scale-down&page-id=0%3A1&starting-point-node-id=323%3A4)
 
 
-### ENG Summary: 
+## Inicializando
 
-> This project's main focus is to help people with some type of
-> disability to get their first job or re-enter the job market.
+**Passo 1:**
 
-### PT-BR Resumo:
+Baixe ou clone esse repositório usando o link abaixo:  
 
->O foco principal deste projeto é ajudar pessoas com algum 
->tipo de deficiência a conseguir o primeiro emprego ou reingressar no mercado de trabalho.
+```
+https://github.com/omatheusoliveira/inwork.git
+```
 
-### Link of prototype:
->https://shre.ink/8rf
+**Passo 2:**
+
+Na raiz do projeto execute o seguinte comando para pegar todas as dependências:
+
+```
+npm install
+```
+
+**Passo 3:**
+
+Para rodar o projeto, execute os seguintes comandos:
+
+```
+npm run serve // para executar a aplicação
+
+npm run backend // para executar o db.json
+```
+
+
