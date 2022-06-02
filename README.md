@@ -22,9 +22,8 @@ Matheus Assunção - Testes e Documentação
 
 ## Link do protótipo
 
-```
-[Clique aqui para ser redirecionado para o FIGMA](https://shre.ink/8rf)
-```
+> [Clique aqui para ser redirecionado para o Figma](https://shre.ink/8rf)
+
 
 ## Inicializando
 
