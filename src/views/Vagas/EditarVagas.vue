@@ -30,18 +30,20 @@ export default {
   display: flex;
 
   .container {
-    padding: 94px 150px 0 150px;
+    padding: 50px 150px 0 150px;
     width: calc(100vw - 253px);
 
     .header {
       display: flex;
       width: 100%;
       justify-content: space-between;
-      margin-bottom: 65px;
+      margin-bottom: 45px;
 
       h2 {
         margin: 0;
         font-weight: 500;
+        text-decoration: underline;
+        font-size: 36px;
       }
     }
   }

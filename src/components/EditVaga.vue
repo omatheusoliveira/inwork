@@ -8,7 +8,7 @@
       <div class="wage">
         <p>Remuneração</p>
         <div class="inputs">
-          <input type="text" v-model="vacancy.remuneration" />
+          <input type="number" v-model="vacancy.remuneration" />
         </div>
       </div>
     </div>
@@ -59,14 +59,14 @@ export default {
       .catch((error) => {
         console.log(error);
       });
-  }
+  },
 };
 </script>
 
 <style lang="less" scoped>
 form {
   width: 100%;
-  height: 700px;
+  height: 570px;
   background: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
@@ -80,45 +80,22 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 500px;
+    width: 70%;
 
-    .title {
+    .title,
+    .wage {
       p {
         margin: 0 0 6px 0;
       }
       input {
-        width: 375px;
+        width: 300px;
         height: 50px;
         border-radius: 10px;
         border: 0.1px solid #80808055;
         text-indent: 17px;
       }
-      input[type="text"] {
+      input {
         font-size: 24px;
-      }
-    }
-
-    .wage {
-      p {
-        margin: 0 0 6px 0;
-      }
-      .inputs {
-        display: flex;
-
-        p {
-          margin: 0 26px 0 26px;
-        }
-
-        input {
-          width: 214px;
-          height: 50px;
-          border-radius: 10px;
-          border: 0.1px solid #80808055;
-          text-indent: 17px;
-        }
-        input[type="text"] {
-          font-size: 24px;
-        }
       }
     }
   }
@@ -129,7 +106,7 @@ form {
     }
     .email {
       input {
-        width: 375px;
+        width: 300px;
         height: 50px;
         border-radius: 10px;
         border: 0.1px solid #80808055;
@@ -142,8 +119,8 @@ form {
 
     .description {
       textarea {
-        width: 1290px;
-        height: 290px;
+        width: 100%;
+        height: 180px;
         border-radius: 10px;
         border: 0.1px solid #80808055;
         resize: none;

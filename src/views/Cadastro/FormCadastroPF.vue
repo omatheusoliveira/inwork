@@ -12,30 +12,30 @@
         <h3>Informações pessoais</h3>
         <div class="email">
           <p>Email<a style="color: red">*</a></p>
-          <input type="text" v-model="email" />
+          <input type="text" v-model="email" required />
         </div>
         <div class="cpf">
           <p>CPF<a style="color: red">*</a></p>
-          <input type="text" v-model="cpf" />
+          <input type="text" v-model="cpf" required />
         </div>
         <div class="full-name">
           <p>Nome completo<a style="color: red">*</a></p>
-          <input type="text" v-model="fullname" />
+          <input type="text" v-model="fullname" required />
         </div>
         <div class="phone">
           <p>Celular<a style="color: red">*</a></p>
-          <input type="text" v-model="phone" />
+          <input type="text" v-model="phone" required />
         </div>
       </div>
       <div class="create-login">
         <h3>Crie seu login</h3>
         <div class="username">
           <p id="username">Nome de usuário<a style="color: red">*</a></p>
-          <input type="text" v-model="username" />
+          <input type="text" v-model="username" required />
         </div>
         <div class="password">
           <p id="password">Senha<a style="color: red">*</a></p>
-          <input type="password" v-model="password" />
+          <input type="password" v-model="password" required />
         </div>
         <div class="footer">
           <button type="submit">Finalizar</button>

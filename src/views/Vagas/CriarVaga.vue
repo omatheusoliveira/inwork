@@ -1,5 +1,5 @@
 <template>
-  <div class="editar-vaga">
+  <div class="criar-vaga">
     <MenuLateralPJ />
     <div class="container">
       <div class="header">
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.editar-vaga {
+.criar-vaga {
   display: flex;
 
   .container {

@@ -6,7 +6,7 @@
     <div class="container">
       <div class="header">
         <h2>Vagas para Marília e região</h2>
-        <input type="text" placeholder="Pesquisar por vagas" />
+        <input type="text" placeholder="Pesquisar por vagas" readonly @click="alertFuncao"/>
       </div>
       <div class="content">
         <VagaItemPF />
@@ -24,6 +24,12 @@ export default {
   components: {
     MenuLateralPF,
     VagaItemPF,
+  },
+  
+  methods: {
+    alertFuncao() {
+      alert('Está função ainda não está disponivel no sistema');
+    },
   },
 };
 </script>

@@ -12,44 +12,44 @@
         <h3>Informações da empresa</h3>
         <div class="razao-social">
           <p>Razão social<a style="color: red">*</a></p>
-          <input type="text" v-model="companyname"/>
+          <input type="text" v-model="companyname" required/>
         </div>
         <div class="logradouro">
           <p>Logradouro<a style="color: red">*</a></p>
-          <input type="text" v-model="address"/>
+          <input type="text" v-model="address" required/>
         </div>
         <div class="municipio">
           <p>Municípo/UF<a style="color: red">*</a></p>
-          <input type="text" v-model="city"/>
+          <input type="text" v-model="city" required/>
         </div>
         <div class="cnpj">
           <p>CNPJ<a style="color: red">*</a></p>
-          <input type="text" v-model="cnpj"/>
+          <input type="text" v-model="cnpj" required/>
         </div>
       </div>
       <div class="another-information">
         <div class="numero">
           <p>Número<a style="color: red">*</a></p>
-          <input type="text" v-model="number"/>
+          <input type="text" v-model="number" required/>
         </div>
         <div class="cep">
           <p>CEP<a style="color: red">*</a></p>
-          <input type="text" v-model="cep"/>
+          <input type="text" v-model="cep" required/>
         </div>
         <div class="bairro">
           <p>Bairro<a style="color: red">*</a></p>
-          <input type="text" v-model="district"/>
+          <input type="text" v-model="district" required/>
         </div>
       </div>
       <div class="create-login">
         <h3>Crie seu login</h3>
         <div class="username">
           <p id="username">Nome de usuário<a style="color: red">*</a></p>
-          <input type="text" v-model="username"/>
+          <input type="text" v-model="username" required/>
         </div>
         <div class="password">
           <p id="password">Senha<a style="color: red">*</a></p>
-          <input type="password" v-model="password"/>
+          <input type="password" v-model="password" required/>
         </div>
         <div class="footer">
           <button type="submit">Finalizar</button>

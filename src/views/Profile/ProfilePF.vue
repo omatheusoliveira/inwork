@@ -82,6 +82,8 @@ export default {
         })
         .then((response) => {
           console.log(response);
+          alert('Dados atualizados com sucesso!');	
+          this.$router.push("/home-pf");
         })
         .catch((error) => {
           console.log(error);

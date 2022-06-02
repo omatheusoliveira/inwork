@@ -1,5 +1,6 @@
 <template>
   <div class="vaga-item-content">
+    <LoadingAnimation v-if="isLoading" />
     <div class="card" v-for="vacancies in vacancy" :key="vacancies.id">
       <div class="content">
         <div class="header">
@@ -12,7 +13,7 @@
         </div>
         <div class="body">
           <div class="wage">
-            <p>{{ vacancies.remuneration }}</p>
+            <p>Remuneração de: R${{ vacancies.remuneration }}</p>
           </div>
           <div class="description">
             <p>
@@ -28,7 +29,7 @@
           </div>
           <div class="edit-vacancy">
             <img src="../assets/icons/icon-edit.png" alt="icon-edit" />
-            <a>Editar vaga</a>
+            <a @click="alertFuncao">Editar vaga</a>
           </div>
         </div>
       </div>
@@ -37,26 +38,40 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
+import LoadingAnimation from "./LoadingAnimation.vue";
 
 export default {
   name: "VagaItemPJ",
+  components: {
+    LoadingAnimation,
+  },
 
   data() {
     return {
       vacancy: [],
+      isLoading: false,
     };
   },
-  mounted() {
-    axios.get('http://localhost:3000/vacancy')
-      .then(response => {
-        this.vacancy = response.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  created() {
+    this.getVacancy();
   },
-}
+  methods: {
+    alertFuncao() {
+      alert("Está função ainda não está disponivel no sistema");
+    },
+
+    getVacancy() {
+      this.isLoading = true;
+      setTimeout(() => {
+        axios.get("http://localhost:3000/vacancy").then((response) => {
+          this.vacancy = response.data;
+          this.isLoading = false;
+        });
+      }, 800);
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>

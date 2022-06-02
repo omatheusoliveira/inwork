@@ -7,8 +7,8 @@
       </div>
       <div class="wage">
         <p>Remuneração</p>
-        <div class="inputs">
-          <input type="number" v-model="remuneration" />
+        <div>
+          <input type="number" v-model="remuneration"/>
         </div>
       </div>
     </div>
@@ -47,12 +47,12 @@ export default {
       remuneration: "",
       contact: "",
       description: "",
-      company:null ,
+      company: null,
     };
   },
 
-  async mounted(){
-    await this.getEmpresa()
+  async mounted() {
+    await this.getEmpresa();
   },
 
   methods: {
@@ -61,7 +61,6 @@ export default {
         .get("http://localhost:3000/users-pj")
         .then((response) => {
           this.company = response.data[0];
-          console.log(response);
         })
         .catch((error) => {
           console.log(error);
@@ -93,11 +92,12 @@ export default {
 <style lang="less" scoped>
 form {
   width: 100%;
-  height: 100%;
+  height: 570px;
   background: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   padding: 20px 36px 40px 24px;
+  
   p {
     font-size: 26px;
     font-weight: 400;
@@ -107,39 +107,19 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 500px;
+    width: 70%;
 
-    .title {
-      p {
-        margin: 0 0 6px 0;
-      }
-      input {
-        width: 375px;
-        height: 50px;
-        border-radius: 10px;
-        border: 0.1px solid #80808055;
-        text-indent: 17px;
-      }
-    }
-
+    .title,
     .wage {
       p {
         margin: 0 0 6px 0;
       }
-      .inputs {
-        display: flex;
-
-        p {
-          margin: 0 26px 0 26px;
-        }
-
-        input {
-          width: 214px;
-          height: 50px;
-          border-radius: 10px;
-          border: 0.1px solid #80808055;
-          text-indent: 17px;
-        }
+      input {
+        width: 300px;
+        height: 50px;
+        border-radius: 10px;
+        border: 0.1px solid #80808055;
+        text-indent: 17px;
       }
     }
   }
@@ -150,7 +130,7 @@ form {
     }
     .email {
       input {
-        width: 375px;
+        width: 300px;
         height: 50px;
         border-radius: 10px;
         border: 0.1px solid #80808055;
@@ -160,8 +140,8 @@ form {
 
     .description {
       textarea {
-        width: 1290px;
-        height: 290px;
+        width: 100%;
+        height: 180px;
         border-radius: 10px;
         border: 0.1px solid #80808055;
         resize: none;
