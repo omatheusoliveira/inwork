@@ -23,7 +23,7 @@ Matheus Assunção - Testes e Documentação
 ## Link do protótipo
 
 ```
-(https://shre.ink/8rf)
+[Clique aqui para ser redirecionado para o FIGMA](https://shre.ink/8rf)
 ```
 
 ## Inicializando
