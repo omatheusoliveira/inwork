@@ -1,13 +1,5 @@
 # InWork
 
->Project with Vue 3 + Less + Vue Router + Axios + JSON Server. 
-
-### Link of prototype:
->https://shre.ink/8rf
-
-
-# InWork
-
 >O foco principal deste projeto é ajudar pessoas com algum 
 >tipo de deficiência a conseguir o primeiro emprego ou reingressar no mercado de trabalho.
 
