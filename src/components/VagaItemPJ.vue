@@ -29,7 +29,7 @@
           </div>
           <div class="edit-vacancy">
             <img src="../assets/icons/icon-edit.png" alt="icon-edit" />
-            <a @click="alertFuncao">Editar vaga</a>
+            <router-link :to="`/editar-vaga/${vacancies.id}`" >Editar vaga</router-link>
           </div>
         </div>
       </div>
@@ -57,10 +57,6 @@ export default {
     this.getVacancy();
   },
   methods: {
-    alertFuncao() {
-      alert("Está função ainda não está disponivel no sistema");
-    },
-
     getVacancy() {
       this.isLoading = true;
       setTimeout(() => {

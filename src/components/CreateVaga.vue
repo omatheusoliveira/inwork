@@ -3,23 +3,23 @@
     <div class="header">
       <div class="title">
         <p>Título</p>
-        <input type="text" v-model="title" />
+        <input type="text" v-model="title" required/>
       </div>
       <div class="wage">
         <p>Remuneração</p>
         <div>
-          <input type="number" v-model="remuneration"/>
+          <input type="number" v-model="remuneration" required/>
         </div>
       </div>
     </div>
     <div class="body">
       <div class="email">
         <p>E-mail para contato</p>
-        <input type="text" v-model="contact" />
+        <input type="text" v-model="contact" required/>
       </div>
       <div class="description">
         <p>Descrição da vaga</p>
-        <textarea v-model="description" maxlength="150"></textarea>
+        <textarea v-model="description" maxlength="150" required></textarea>
       </div>
     </div>
     <div class="footer">
@@ -120,6 +120,7 @@ form {
         border-radius: 10px;
         border: 0.1px solid #80808055;
         text-indent: 17px;
+        font-size: 24px;
       }
     }
   }
@@ -135,6 +136,7 @@ form {
         border-radius: 10px;
         border: 0.1px solid #80808055;
         text-indent: 17px;
+        font-size: 24px;
       }
     }
 
@@ -145,7 +147,7 @@ form {
         border-radius: 10px;
         border: 0.1px solid #80808055;
         resize: none;
-        font-size: 22px;
+        font-size: 24px;
         padding: 5px 0 0 17px;
       }
     }
@@ -154,7 +156,7 @@ form {
   .footer {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
 
     .save-cancel {
       display: flex;

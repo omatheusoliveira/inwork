@@ -28,7 +28,7 @@
           </div>
           <div class="cnpj">
             <p>CNPJ</p>
-            <input type="text" v-model="users.cnpj"/>
+            <input type="text" v-mask="'##.###.###/####-##'" v-model="users.cnpj"/>
           </div>
         </div>
         <div class="another-information">
@@ -38,7 +38,7 @@
           </div>
           <div class="cep">
             <p>CEP</p>
-            <input type="text" v-model="users.cep"/>
+            <input type="text" v-mask="'#####-###'" v-model="users.cep"/>
           </div>
           <div class="bairro">
             <p>Bairro</p>
@@ -47,7 +47,7 @@
           <div class="footer">
             <button type="submit">Salvar</button>
             <p class="or">ou</p>
-            <router-link to="/home-pf">
+            <router-link to="/home-pj">
               <p>Cancelar</p>
             </router-link>
           </div>
@@ -91,9 +91,9 @@ export default {
           companyname: this.users.companyname,
           address: this.users.address,
           city: this.users.city,
-          cnpj: this.users.cnpj,
+          cnpj: this.users.cnpj.replaceAll('.', '').replaceAll('-', '').replaceAll('/', ''),
           number: this.users.number,
-          cep: this.users.cep,
+          cep: this.users.cep.replaceAll('.', '').replaceAll('-', ''),
           district: this.users.district,
         })
         .then((response) => {

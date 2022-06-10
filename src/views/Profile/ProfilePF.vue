@@ -20,7 +20,7 @@
           </div>
           <div class="cpf">
             <p>CPF</p>
-            <input type="text" v-model="users.cpf"/>
+            <input type="text" v-mask="'###.###.###-##'" v-model="users.cpf"/>
           </div>
           <div class="email">
             <p>E-mail</p>
@@ -30,7 +30,7 @@
         <div class="another-information">
           <div class="phone">
             <p>Celular</p>
-            <input type="text" v-model="users.cellphone"/>
+            <input type="text" v-mask="'(##)# ####-####'" v-model="users.cellphone"/>
           </div>
           <div class="footer">
             <button type="submit">Salvar</button>
@@ -76,9 +76,9 @@ export default {
       await axios
         .put(`http://localhost:3000/users-pf/${this.users.id}`,{
           fullname: this.users.fullname,
-          cpf: this.users.cpf,
+          cpf: this.cpf.replaceAll(".", "").replaceAll("-", ""),
           email: this.users.email,
-          cellphone: this.users.cellphone,
+          cellphone: this.cellphone.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", ""),
         })
         .then((response) => {
           console.log(response);

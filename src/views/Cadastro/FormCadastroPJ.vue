@@ -24,7 +24,7 @@
         </div>
         <div class="cnpj">
           <p>CNPJ<a style="color: red">*</a></p>
-          <input type="text" v-model="cnpj" required/>
+          <input type="text" v-mask="'##.###.###/####-##'" v-model="cnpj" required/>
         </div>
       </div>
       <div class="another-information">
@@ -34,7 +34,7 @@
         </div>
         <div class="cep">
           <p>CEP<a style="color: red">*</a></p>
-          <input type="text" v-model="cep" required/>
+          <input type="text" v-mask="'#####-###'" v-model="cep" required/>
         </div>
         <div class="bairro">
           <p>Bairro<a style="color: red">*</a></p>
@@ -87,9 +87,9 @@ export default {
         companyname: this.companyname,
         address: this.address,
         city: this.city,
-        cnpj: this.cnpj,
+        cnpj: this.cnpj.replaceAll('.', '').replaceAll('-', '').replaceAll('/', ''),
         number: this.number,
-        cep: this.cep,
+        cep: this.cep.replaceAll('.', '').replaceAll('-', ''),
         district: this.district,
         username: this.username,
         password: this.password,

@@ -16,7 +16,7 @@
         </div>
         <div class="cpf">
           <p>CPF<a style="color: red">*</a></p>
-          <input type="text" v-model="cpf" required />
+          <input type="text" v-mask="'###.###.###-##'" v-model="cpf" required />
         </div>
         <div class="full-name">
           <p>Nome completo<a style="color: red">*</a></p>
@@ -24,7 +24,7 @@
         </div>
         <div class="phone">
           <p>Celular<a style="color: red">*</a></p>
-          <input type="text" v-model="phone" required />
+          <input type="text" v-mask="'(##)# ####-####'" v-model="cellphone" maxlength="15" required />
         </div>
       </div>
       <div class="create-login">
@@ -70,9 +70,9 @@ export default {
       await axios
         .post("http://localhost:3000/users-pf", {
           email: this.email,
-          cpf: this.cpf,
+          cpf: this.cpf.replaceAll(".", "").replaceAll("-", ""),
           fullname: this.fullname,
-          cellphone: this.cellphone,
+          cellphone: this.cellphone.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", ""),
           username: this.username,
           password: this.password,
         })

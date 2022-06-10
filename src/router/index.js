@@ -45,7 +45,7 @@ const routes = [
     component: CriarVaga,
   },
   {
-    path: "/editar-vaga",
+    path: "/editar-vaga/:id",
     name: "editar-vaga",
     component: EditarVagas,
   },

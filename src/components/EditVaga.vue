@@ -25,10 +25,10 @@
     <div class="footer">
       <div class="delete-vaga">
         <img src="../assets/icons/icon-trash.png" alt="icon-trash" />
-        <p>Excluir vaga</p>
+        <p @click="alertFuncao()">Excluir vaga</p>
       </div>
       <div class="save-cancel">
-        <button>Salvar</button>
+        <button @click="updateVacancy()">Salvar</button>
         <p>ou</p>
         <router-link to="/home-pj">
           <p>Cancelar</p>
@@ -40,20 +40,44 @@
 
 <script>
 import axios from "axios";
+import moment from "moment";
 
 export default {
   name: "EditVaga",
 
   data() {
     return {
-      vacancy: [],
+      vacancy: {},
     };
   },
+
+  methods: {
+    async updateVacancy() {
+      await axios
+        .put(`http://localhost:3000/vacancy/${this.$route.params.id}`,{
+          title: this.vacancy.title,
+          remuneration: this.vacancy.remuneration,
+          contact: this.vacancy.contact,
+          description: this.vacancy.description,
+          created_at:  moment(new Date()).format("DD/MM/YYYY"),
+          company: this.vacancy.company,
+        })
+        .then((response) => {
+          console.log(response);
+          alert('Dados atualizados com sucesso!');	
+          this.$router.push("/home-pj");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+
   mounted() {
     axios
-      .get("http://localhost:3000/vacancy")
+      .get(`http://localhost:3000/vacancy/${this.$route.params.id}`)
       .then((response) => {
-        this.vacancy = response.data[0];
+        this.vacancy = response.data;
         console.log(response);
       })
       .catch((error) => {

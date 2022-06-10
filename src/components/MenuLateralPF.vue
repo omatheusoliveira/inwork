@@ -19,7 +19,9 @@
     </div>
     <div class="logout">
       <img src="../assets/icons/icon-logout.png" alt="iconlogout" />
-      <label style="text-decoration: underline">Sair</label>
+      <router-link to="/">
+        <label style="text-decoration: underline">Sair</label>
+      </router-link>
     </div>
   </div>
 </template>
