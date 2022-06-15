@@ -37,7 +37,7 @@ https://github.com/omatheusoliveira/inwork.git
 
 **Passo 2:**
 
-Na raiz do projeto execute o seguinte comando para pegar todas as dependências:
+Na raiz do projeto, execute o seguinte comando para baixar todas as dependências:
 
 ```
 npm install
