@@ -20,6 +20,30 @@ Matheus Assunção - Testes e Documentação
 
 ```
 
+## Telas do sistema:
+
+- [x] Login
+- [x] Cadastro PF/PJ
+- [x] Home PF/PJ
+- [x] Perfil PF/PJ
+- [x] Editar vaga
+- [x] Criar vaga
+
+## Funções:
+
+- [ ] Login
+- [x] Cadastro PF/PJ
+- [x] Home PF/PJ
+- [x] Editar perfil PF/PJ
+- [x] Editar vaga
+- [x] Criar vaga
+- [ ] Excluir vaga
+- [ ] Logout
+
+## Link API:
+
+>[Em construção] 
+
 ## Link do protótipo:
 
 > [Clique aqui para ser redirecionado para o Figma](https://www.figma.com/proto/q0xqySHO8g7Pl3nsqRc0Nj/InWork?node-id=323%3A4&scaling=scale-down&page-id=0%3A1&starting-point-node-id=323%3A4)
@@ -52,5 +76,3 @@ npm run serve // para executar a aplicação
 
 npm run backend // para executar o db.json
 ```
-
-
